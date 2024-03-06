@@ -19,14 +19,47 @@
     .kuva {
         height: 300px;
     }
-    
+    .container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
     </style>
 <body>
     <h1><span id="hipi">Kalle</span><span id="hub">Hub</span></h1>
+    <div class="container" onclick="myFunction(this)">
+        <div class="bar1">Home</div>
+        <div class="bar2">Gallery</div>
+        <div class="bar3">Contact</div>
+    </div>
+
     <img class="kuva" src="http://vuodatus.net/media/cache/widget_boxed300/widget_images/widget_boxed300/5265559db596dcb622000007/Hippie2.jpg">
     <img class="kuva" src="https://www.capricole.com/files/capricole.kotisivukone.com/pikkuhippie1.jpg">
     <img class="kuva" src="https://www.capricole.com/files/capricole.kotisivukone.com/pikkuhippie2.jpg">
     <img class="kuva" src="https://www.capricole.com/files/capricole.kotisivukone.com/pikkuhippie3.jpg">
 
 </body>
+    <script>
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+</script>
+
 </html>
